@@ -14,7 +14,6 @@ const style = {
 }
 
 export const AppButtons = (props) => {
-    console.log(props.itemsChecked)
     return (
         <div style={{
             marginBottom: 40
@@ -24,6 +23,7 @@ export const AppButtons = (props) => {
                 label="Добавить элемент"
                 primary={true}
                 style={style}
+                onClick={(event) => props.onAdd(event.currentTarget)}
             />
             <RaisedButton
                 label="Удалить выбранные элементы"
@@ -52,6 +52,7 @@ export const AppButtons = (props) => {
                     bottom: 50
                 }}
                 backgroundColor={deepOrange500}
+                onClick={() => props.openModal()}
             >
                 <ContentAdd />
             </FloatingActionButton>
